@@ -11,6 +11,5 @@ applications:
   - promotions-manager-ui
     target: instance-1
     
-  applications:
   - promotions-manager-api
     target: instance-1
