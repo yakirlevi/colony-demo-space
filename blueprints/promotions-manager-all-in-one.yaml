@@ -12,13 +12,13 @@ inputs:
 - AZURE_VM_SIZE: Basic_A1
 
 applications:
-  - promotions-manager-ui
-      target: instance-1      
+  - promotions-manager-ui:
+      target: instance-1     
       input_values:
         - PORT: $PORT
         - AZURE_VM_SIZE: $AZURE_VM_SIZE
     
-  - promotions-manager-api
+  - promotions-manager-api:
       target: instance-1      
       input_values:
         - PORT: $PORT
