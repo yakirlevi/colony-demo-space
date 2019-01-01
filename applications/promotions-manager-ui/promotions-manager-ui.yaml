@@ -24,7 +24,7 @@ source:
   image:    
     azure_image:
     - urn: jetware-srl:mongodb:mongodb34-ubuntu-1604:latest
-      username: ubuntu
+      username: adminuser
   os_type: linux
 spec_version: 1
 debugging: 
