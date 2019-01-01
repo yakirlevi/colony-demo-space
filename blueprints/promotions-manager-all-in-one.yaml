@@ -1,0 +1,16 @@
+spec_version: 1
+kind: blueprint
+metadata:
+  description: >
+    All in one deployment of our promotions manager
+    
+clouds:
+  - azure: westus
+
+applications:
+  - promotions-manager-ui
+    target: instance-1
+    
+  applications:
+  - promotions-manager-api
+    target: instance-1
