@@ -4,8 +4,7 @@ metadata:
   description: >
     All in one deployment of our promotions manager
     
-clouds:
-  - azure 1: westeurope
+clouds: 
   - azure: westeurope
 
 inputs:
