@@ -6,6 +6,7 @@ metadata:
     
 clouds:
   - azure 1: westeurope
+  - azure: westeurope
 
 inputs:
 - PORT: 3000
