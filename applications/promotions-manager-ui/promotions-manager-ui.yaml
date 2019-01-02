@@ -23,7 +23,7 @@ configuration:
 source:
   image:    
     azure_image:
-    - urn: jetware-srl:mongodb:mongodb34-ubuntu-1604:latest
+    - urn: Canonical:UbuntuServer:16.04-LTS:latest
       username: adminuser
   os_type: linux
 spec_version: 1

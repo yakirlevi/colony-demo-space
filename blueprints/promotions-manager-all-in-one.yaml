@@ -6,6 +6,9 @@ metadata:
     
 clouds: 
   - azure: westeurope
+  
+artifacts:
+  - promotions-manager-ui:
 
 inputs:
 - PORT: 3000
