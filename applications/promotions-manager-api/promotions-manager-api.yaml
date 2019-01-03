@@ -14,9 +14,9 @@ infrastructure:
         vm_size: $AZURE_VM_SIZE
 configuration:
   start:
-    script: promotions-mamager-api-command.sh
+    script: promotions-manager-api-command.sh
   initialization:
-    script: promotions-mamager-api.sh
+    script: promotions-manager-api.sh
   healthcheck:
     timeout: 1000
     wait_for_ports: $PORT
