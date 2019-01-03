@@ -1,30 +1,31 @@
 kind: application
-inputs:
-- API_PROXY_PORT: 3001
-- AZURE_VM_SIZE: Basic_A1
+
 infrastructure:
   connectivity:
     internal:
       - port_info:
-          port: $API_PROXY_PORT
+          port: 27017
   compute:
     spec:      
       azure:
         vm_size: $AZURE_VM_SIZE
+        
 configuration:
   start:
-    script: promotions-manager-api-command.sh
+    script: mongodb-command.sh
   initialization:
-    script: promotions-manager-api.sh
+    script: mongodb.sh  # will install mongodb 3.4
   healthcheck:
     timeout: 1000
-    wait_for_ports: $API_PROXY_PORT
+    wait_for_ports: 27017
+    
 source:
   image:    
     azure_image:
     - urn: Canonical:UbuntuServer:16.04-LTS:latest
       username: adminuser
   os_type: linux
+  
 spec_version: 1
 debugging: 
   connection_protocol: SSH
