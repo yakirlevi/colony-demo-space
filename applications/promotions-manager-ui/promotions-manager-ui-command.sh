@@ -1,2 +1,3 @@
 #!/bin/bash
-echo 'Run Web App'
+echo 'Start nginx service'
+sudo service nginx start

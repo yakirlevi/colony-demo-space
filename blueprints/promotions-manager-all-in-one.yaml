@@ -16,12 +16,13 @@ inputs:
 
 applications:
   - promotions-manager-ui:
-      target: instance-1     
+#      target: instance-1     
       input_values:
         - PORT: $PORT
         - AZURE_VM_SIZE: $AZURE_VM_SIZE
+        - API_PROXY_PORT: 3001
     
-  - promotions-manager-api:
-      target: instance-1      
-      input_values:        
-        - AZURE_VM_SIZE: $AZURE_VM_SIZE
+#  - promotions-manager-api:
+#      target: instance-1      
+#      input_values:        
+#        - AZURE_VM_SIZE: $AZURE_VM_SIZE
