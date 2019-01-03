@@ -28,7 +28,7 @@ server {
 	server_name _;
 	index index.html index.htm;
 	location /api/ {		
-		proxy_pass      http://api.$DOMAIN_NAME:$API_PROXY_PORT/api/;
+		proxy_pass      http://promotions-manager-api.$DOMAIN_NAME:$API_PROXY_PORT/api/;
 	}
 }
 EOF
