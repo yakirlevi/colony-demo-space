@@ -11,7 +11,8 @@ echo 'Install nginx'
 apt-get install nginx -y
 
 echo 'Extract ui artifact to /var/www/promotions-manager/'
-tar -xvf $ARTIFACTS_PATH/promotions-manager-ui.$BUILD_ID.tar.gz /var/www/promotions-manager/
+tar -xvf $ARTIFACTS_PATH/promotions-manager-ui.*.tar.gz $ARTIFACTS_PATH/drop/
+tar -xvf $ARTIFACTS_PATH/drop/promotions-manager-ui.*.tar.gz /var/www/promotions-manager/
 
 echo 'Configure nginx'
 cd /etc/nginx/sites-available/
