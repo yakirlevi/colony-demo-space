@@ -40,7 +40,7 @@ server {
 		proxy_read_timeout 600s;
 	}
 	location / {
-		try_files $uri /index.html;
+		try_files \$uri /index.html;
 	}
 }
 EOF
