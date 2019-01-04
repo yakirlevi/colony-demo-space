@@ -35,13 +35,10 @@ echo 'Extracting user data db artifact'
 mkdir $ARTIFACTS_PATH/drop
 tar -xvf $ARTIFACTS_PATH/*.* -C $ARTIFACTS_PATH/drop/
 
-echo 'Install mongo clients'
-apt install mongodb-clients -y
-
 echo 'Import all collections from artifact'
 cd $ARTIFACTS_PATH/drop
 for f in ./*.json; do
 	temp_var="${f%.*}"
-	$collection="${temp_var:2}"
+	collection="${temp_var:2}"
 	mongoimport --db promo-manager --collection $collection --file $ARTIFACTS_PATH/drop/$f
 done
