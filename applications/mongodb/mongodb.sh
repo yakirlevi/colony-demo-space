@@ -1,6 +1,9 @@
 #!/bin/bash
 echo 'Installing mongodb 4.0'
 
+# save all env for debugging
+printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
+
 echo 'Import the Public Key used by the Ubuntu Package Manager'
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 
@@ -30,13 +33,15 @@ sudo systemctl enable mongod
 
 echo 'Extracting user data db artifact'
 mkdir $ARTIFACTS_PATH/drop
-tar -xvf $ARTIFACTS_PATH/user-data-db.tar -C $ARTIFACTS_PATH/drop/
+tar -xvf $ARTIFACTS_PATH/*.* -C $ARTIFACTS_PATH/drop/
 
 echo 'Install mongo clients'
 apt install mongodb-clients -y
 
-echo 'Importing users collection'
-mongoimport --db promo-manager --collection users --file $ARTIFACTS_PATH/drop/users.json
-
-echo 'Importing promotions collection'
-mongoimport --db promo-manager --collection promotions --file $ARTIFACTS_PATH/drop/promotions.json
+echo 'Import all collections from artifact'
+cd $ARTIFACTS_PATH/drop
+for f in ./*.json; do
+	temp_var="${f%.*}"
+	$collection="${temp_var:2}"
+	mongoimport --db promo-manager --collection $collection --file $ARTIFACTS_PATH/drop/$f
+done

@@ -1,6 +1,9 @@
 #!/bin/bash
 echo '=============== Staring init script for Promotions Manager UI ==============='
 
+# save all env for debugging
+printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
+
 echo '==> Installing Node.js and NPM'
 sudo apt-get update
 sudo apt install curl -y
@@ -27,8 +30,17 @@ server {
 	root /var/www/promotions-manager;
 	server_name _;
 	index index.html index.htm;
-	location /api/ {		
-		proxy_pass      http://promotions-manager-api.$DOMAIN_NAME:$API_PORT/api/;
+	location /api {		
+		proxy_pass http://promotions-manager-api.$DOMAIN_NAME:$API_PORT/api;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection 'upgrade';
+		proxy_set_header Host $host;
+		proxy_cache_bypass $http_upgrade;
+		proxy_read_timeout 600s;
+	}
+	location / {
+		try_files $uri /index.html;
 	}
 }
 EOF

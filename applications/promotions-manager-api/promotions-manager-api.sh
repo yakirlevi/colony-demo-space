@@ -1,6 +1,9 @@
 #!/bin/bash
 echo '=============== Staring init script for Promotions Manager API ==============='
 
+# save all env for debugging
+printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
+
 echo '==> Installing Node.js and NPM'
 sudo apt-get update
 sudo apt install curl -y
@@ -20,3 +23,7 @@ source /etc/environment
 echo '==> Install PM2, it provides an easy way to manage and daemonize nodejs applications'
 npm install -g pm2
 pm2 startup systemd
+
+echo '==> Start our api as a daemon'
+cd /var/promotions-manager-api
+pm2 start index.js
