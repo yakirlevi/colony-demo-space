@@ -19,21 +19,18 @@ inputs:
 
 applications:
   - promotions-manager-ui:
-      target: vm1
       input_values:
         - PORT: $PORT
         - AZURE_VM_SIZE: $AZURE_VM_SIZE
         - API_PORT: $API_PORT
-      #depends_on:
+      #pends_on:
       #  - promotions-manager-api
     
   - promotions-manager-api:      
-      target: vm1
       input_values:        
         - API_PORT: $API_PORT
         - AZURE_VM_SIZE: $AZURE_VM_SIZE
         - DATABASE_HOST: mongodb
         
   - mongodb:
-      target: vm1
               
