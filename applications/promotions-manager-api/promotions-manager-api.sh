@@ -19,6 +19,8 @@ tar -xvf $ARTIFACTS_PATH/drop/drop/promotions-manager-api.*.tar.gz -C /var/promo
 echo '==> Set the DATABASE_HOST env var to be globally available'
 DATABASE_HOST=$DATABASE_HOST.$DOMAIN_NAME
 echo 'DATABASE_HOST='$DATABASE_HOST >> /etc/environment
+echo 'RELEASE_NUMBER='$RELEASE_NUMBER >> /etc/environment
+echo 'API_BUILD_NUMBER='$API_BUILD_NUMBER >> /etc/environment
 source /etc/environment
 
 echo '==> Install PM2, it provides an easy way to manage and daemonize nodejs applications'
