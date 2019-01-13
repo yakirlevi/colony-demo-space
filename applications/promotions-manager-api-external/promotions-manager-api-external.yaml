@@ -1,0 +1,34 @@
+kind: application
+inputs:
+- API_PORT: 3001
+- AZURE_VM_SIZE: Basic_A1
+- DATABASE_HOST: mongodb
+- RELEASE_NUMBER: none
+- API_BUILD_NUMBER: none
+
+infrastructure:
+  connectivity:
+    external:
+      - port_info:
+          port: $API_PORT
+  compute:
+    spec:      
+      azure:
+        vm_size: $AZURE_VM_SIZE
+configuration:
+  start:
+    script: promotions-manager-api-command.sh
+  initialization:
+    script: promotions-manager-api.sh
+  healthcheck:
+    timeout: 1000
+    wait_for_ports: $API_PORT
+source:
+  image:    
+    azure_image:
+    - urn: Canonical:UbuntuServer:16.04-LTS:latest
+      username: adminuser
+  os_type: linux
+spec_version: 1
+debugging: 
+  connection_protocol: SSH

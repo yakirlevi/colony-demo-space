@@ -18,7 +18,7 @@ inputs:
 - API_BUILD_NUMBER: none
 
 applications:     
-  - promotions-manager-api:      
+  - promotions-manager-api-external:
       target: vm1
       input_values:        
         - API_PORT: $API_PORT
