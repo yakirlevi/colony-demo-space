@@ -1,8 +1,0 @@
-spec_version: 1
-kind: blueprint
-metadata:
-  description: >
-    Empty blueprint
-    
-clouds: 
-  - azure: westeurope
