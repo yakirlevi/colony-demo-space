@@ -8,7 +8,7 @@ clouds:
   - azure: westeurope
   
 artifacts:
-  - promotions-manager-api:
+  - promotions-manager-api-external:
   - mongodb: artifacts/test-data/test-data-db.tar
 
 inputs:
