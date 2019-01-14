@@ -21,6 +21,7 @@ DATABASE_HOST=$DATABASE_HOST.$DOMAIN_NAME
 echo 'DATABASE_HOST='$DATABASE_HOST >> /etc/environment
 echo 'RELEASE_NUMBER='$RELEASE_NUMBER >> /etc/environment
 echo 'API_BUILD_NUMBER='$API_BUILD_NUMBER >> /etc/environment
+echo 'API_PORT='$API_PORT >> /etc/environment
 source /etc/environment
 
 echo '==> Install PM2, it provides an easy way to manage and daemonize nodejs applications'
