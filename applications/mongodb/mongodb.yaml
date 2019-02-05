@@ -26,8 +26,8 @@ source:
     - urn: Canonical:UbuntuServer:16.04-LTS:latest
       username: adminuser
     docker_image:
-    - name: ubuntu
-      tag: 16.04
+    - name: mongo
+      tag: 4.0
   os_type: linux
   
 spec_version: 1
