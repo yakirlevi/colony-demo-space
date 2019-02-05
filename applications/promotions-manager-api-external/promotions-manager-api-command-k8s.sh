@@ -3,13 +3,13 @@
 # block while api is running
 while true
 do
-  #RESULT=`ps -A | sed -n /index\.js$/p`
+  RESULT=`ps -ef | grep index.js | grep -v grep`
 
-  #if [ "${RESULT:-null}" = null ]; then
-  #  echo "not running"
-  #  exit 1
-  #else
-  #  echo "running"
-  #fi
+  if [ "${RESULT:-null}" = null ]; then
+    echo "not running"
+    exit 1
+  else
+    echo "running"
+  fi
   sleep 1
 done
