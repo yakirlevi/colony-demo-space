@@ -8,7 +8,7 @@ clouds:
   - azure 2/aks-cluster
   
 artifacts:
-  - promotions-manager-api-external:
+  - promotions-manager-api-external: artifacts/latest/promotions-manager-api.master.tar.gz
   - mongodb: artifacts/test-data/test-data-db.tar
 
 inputs:
