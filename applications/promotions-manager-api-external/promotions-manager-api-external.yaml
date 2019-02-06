@@ -21,8 +21,8 @@ configuration:
   initialization:
     script: promotions-manager-api.sh
   healthcheck:
+    script: promotions-manager-api-hc.sh
     timeout: 1000
-    wait_for_ports: $API_PORT
 source:
   image:    
     azure_image:

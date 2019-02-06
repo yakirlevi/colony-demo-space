@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ip=$1
-hostname=$ip:$API_PROXY_PORT
+hostname=$ip:$API_PORT
 
 for (( ; ; ))
 do
