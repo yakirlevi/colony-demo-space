@@ -21,7 +21,7 @@ configuration:
   initialization:
     script: promotions-manager-api.sh
   healthcheck:
-    script: promotions-manager-api-hc.sh
+    wait_for_ports: $API_PORT
     timeout: 1000
 source:
   image:    
