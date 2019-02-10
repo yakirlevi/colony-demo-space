@@ -28,7 +28,7 @@ source:
       username: adminuser
     docker_image:
     - name: nginx
-      tag: 1.15.8
+      tag: 1.15.8-alpine
   os_type: linux
 spec_version: 1
 debugging: 
