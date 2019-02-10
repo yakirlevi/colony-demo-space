@@ -5,9 +5,9 @@ echo '=============== Staring init script for Promotions Manager UI ============
 printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 
 echo '==> Installing Node.js and NPM'
-sudo apt-get update
-sudo apt install curl -y
-curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+apt-get update
+apt install curl -y
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt install nodejs
 
 echo '==> Install nginx'
