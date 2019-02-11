@@ -13,7 +13,6 @@ artifacts:
 
 inputs:
 - API_PORT: 3001
-- AZURE_VM_SIZE: Basic_A1
 - RELEASE_NUMBER: none
 - API_BUILD_NUMBER: none
 
@@ -21,12 +20,9 @@ applications:
   - promotions-manager-api-external:
       input_values:        
         - API_PORT: $API_PORT
-        - AZURE_VM_SIZE: $AZURE_VM_SIZE
         - DATABASE_HOST: mongodb
         - RELEASE_NUMBER: $RELEASE_NUMBER
         - API_BUILD_NUMBER: $API_BUILD_NUMBER
 
         
   - mongodb:
-      input_values:
-        - AZURE_VM_SIZE: $AZURE_VM_SIZE
