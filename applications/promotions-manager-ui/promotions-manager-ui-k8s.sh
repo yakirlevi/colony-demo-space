@@ -4,6 +4,14 @@ echo '=============== Staring init script for Promotions Manager UI ============
 # save all env for debugging
 printenv > /var/log/colony-vars-"$(basename "$BASH_SOURCE" .sh)".txt
 
+echo '==> Installing Node.js and NPM'
+apt-get update
+apt install curl -y
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
+apt install nodejs
+
+echo '==> Install nginx'
+apt-get install nginx -y
 echo '==> Extract ui artifact to /var/www/promotions-manager/'
 mkdir $ARTIFACTS_PATH/drop
 tar -xvf $ARTIFACTS_PATH/promotions-manager-ui.*.tar.gz -C $ARTIFACTS_PATH/drop/
@@ -11,10 +19,10 @@ mkdir /var/www/promotions-manager/
 tar -xvf $ARTIFACTS_PATH/drop/drop/promotions-manager-ui.*.tar.gz -C /var/www/promotions-manager/
 
 echo '==> Configure nginx'
-cd /etc/nginx/conf.d
-cp default.conf default.conf.backup
+cd /etc/nginx/sites-available/
+cp default default.backup
 
-cat << EOF > ./default.conf
+cat << EOF > ./default
 server {
 	listen $PORT default_server;
 	listen [::]:$PORT default_server;
