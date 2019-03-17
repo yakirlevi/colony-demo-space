@@ -5,7 +5,7 @@ metadata:
     All in one deployment of our promotions manager
     
 clouds: 
-  - AWS: eu-west-1
+  - AWS 1: eu-west-1
   
 artifacts:
   - promotions-manager-ui:
