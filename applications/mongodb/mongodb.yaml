@@ -1,6 +1,7 @@
 kind: application
 inputs:
 - AZURE_VM_SIZE: Basic_A1
+- AWS_INSTANCE_TYPE: m5.large
 infrastructure:
   connectivity:
     internal:
@@ -10,6 +11,8 @@ infrastructure:
     spec:      
       azure:
         vm_size: $AZURE_VM_SIZE
+      aws:
+        instance_type: $AWS_INSTANCE_TYPE
         
 configuration:
   start:
@@ -28,6 +31,10 @@ source:
     docker_image:
     - name: mongo
       tag: 4.0
+    ami:
+      - id: ami-08660f1c6fb6b01e7
+        region: eu-west-1
+        username: ubuntu
   os_type: linux
   
 spec_version: 1

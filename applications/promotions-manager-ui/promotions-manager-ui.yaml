@@ -3,6 +3,7 @@ inputs:
 - PORT: 3000
 - API_PORT: 30001
 - AZURE_VM_SIZE: Basic_A1
+- AWS_INSTANCE_TYPE: m5.large
 infrastructure:
   connectivity:
     external:
@@ -13,6 +14,8 @@ infrastructure:
     spec:      
       azure:
         vm_size: $AZURE_VM_SIZE
+      aws:
+        instance_type: $AWS_INSTANCE_TYPE
 configuration:
   start:
     script: promotions-manager-ui-command.sh
@@ -29,6 +32,10 @@ source:
     docker_image:
     - name: ubuntu
       tag: 16.04
+    ami:
+      - id: ami-08660f1c6fb6b01e7
+        region: eu-west-1
+        username: ubuntu
   os_type: linux
 spec_version: 1
 debugging: 
