@@ -5,7 +5,7 @@ metadata:
     Application is configured to deploy with multiple instances for load tests.
     
 clouds: 
-  - AWS 1: $REGION
+  - AWS 1: us-east-1
   
 artifacts:
   - promotions-manager-ui: artifacts/latest/promotions-manager-ui.master.tar.gz
