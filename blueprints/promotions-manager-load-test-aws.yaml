@@ -18,7 +18,6 @@ inputs:
 - AWS_INSTANCE_TYPE: m5.large
 - RELEASE_NUMBER: none
 - API_BUILD_NUMBER: none
-- REGION: eu-west-1
 
 applications:
   - promotions-manager-ui:
