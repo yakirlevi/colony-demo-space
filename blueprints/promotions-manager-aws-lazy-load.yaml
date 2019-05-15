@@ -2,7 +2,7 @@ spec_version: 1
 kind: blueprint
 metadata:
   description: >
-    All in one deployment of our promotions manager
+    Deployment of our promotions manager were the UI app is lazy loading its artifacts from S3
     
 clouds: 
   - AWS 1: eu-west-1
@@ -18,19 +18,19 @@ inputs:
 - AWS_INSTANCE_TYPE: m5.large
 - RELEASE_NUMBER: none
 - API_BUILD_NUMBER: none
+- ARTIFACT_BUCKET:
+- UI_ARTIFACT_KEY:
 
 applications:
-  - promotions-manager-ui:
-      target: vm1
+  - promotions-manager-ui-lazy-load:
       input_values:
         - PORT: $PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
         - API_PORT: $API_PORT
-      #depends_on:
-      #  - promotions-manager-api
+        - ARTIFACT_BUCKET: $ARTIFACT_BUCKET
+        - ARTIFACT_KEY: $UI_ARTIFACT_KEY
     
   - promotions-manager-api:      
-      target: vm1
       input_values:
         - API_PORT: $API_PORT
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
@@ -39,7 +39,6 @@ applications:
         - API_BUILD_NUMBER: $API_BUILD_NUMBER
   
   - mongodb:
-      target: vm1
       input_values:
         - AWS_INSTANCE_TYPE: $AWS_INSTANCE_TYPE
               
