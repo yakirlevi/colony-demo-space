@@ -16,7 +16,7 @@ apt-get install nginx -y
 ####################  lazy load artifact ####################
 
 # install aws cli
-apt install awscli
+apt install awscli -y
 
 # consts
 wait_sec=1200 # 20 minutes
