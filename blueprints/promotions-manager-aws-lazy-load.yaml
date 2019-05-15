@@ -17,8 +17,8 @@ inputs:
 - AWS_INSTANCE_TYPE: m5.large
 - RELEASE_NUMBER: none
 - API_BUILD_NUMBER: none
-- ARTIFACT_BUCKET:
-- UI_ARTIFACT_KEY:
+- ARTIFACT_BUCKET: alex-az
+- UI_ARTIFACT_KEY: promotions-manager-latest/promotions-manager-ui.master.tar.gz
 
 applications:
   - promotions-manager-ui-lazy-load:
