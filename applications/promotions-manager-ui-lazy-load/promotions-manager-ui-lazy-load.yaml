@@ -21,6 +21,10 @@ infrastructure:
         vm_size: $AZURE_VM_SIZE
       aws:
         instance_type: $AWS_INSTANCE_TYPE
+  permissions:
+    aws:
+      iam_instance_profile:
+        aws: s3FullAccess
 
 configuration:
   start:

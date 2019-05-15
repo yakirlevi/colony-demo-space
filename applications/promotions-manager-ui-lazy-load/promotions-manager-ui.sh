@@ -14,6 +14,11 @@ echo '==> Install nginx'
 apt-get install nginx -y
 
 ####################  lazy load artifact ####################
+
+# install aws cli
+apt install awscli
+
+# consts
 wait_sec=1200 # 20 minutes
 wait_interval=15 # not recommended to set a lower interval in order to avoid aws api throttling
 
