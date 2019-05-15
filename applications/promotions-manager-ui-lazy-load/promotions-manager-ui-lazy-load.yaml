@@ -24,7 +24,7 @@ infrastructure:
   permissions:
     aws:
       iam_instance_profile:
-        aws: s3FullAccess
+        aws 1: s3FullAccess
 
 configuration:
   start:
