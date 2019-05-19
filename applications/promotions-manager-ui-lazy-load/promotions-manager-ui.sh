@@ -26,6 +26,7 @@ echo "Trying to download artifacts file: s3://$ARTIFACT_BUCKET/$ARTIFACT_KEY"
 
 # get the file name from the artifact key
 file_name="$(basename $ARTIFACT_KEY)"
+file_downloaded=false
 
 for (( c=0 ; c<$wait_sec ; c=c+$wait_interval ))
 do
@@ -41,13 +42,19 @@ do
         else
                 echo "File found, downloading file to current dir"
                 aws s3api get-object --bucket "$ARTIFACT_BUCKET" --key "$ARTIFACT_KEY" "$file_name"
+				file_downloaded=true
                 break
         fi
 
         sleep $wait_interval
 done
 
-# TODO check if timeout reached
+# check if timeout reached
+if [ ! $file_downloaded ]
+then
+	echo "Timeout reached, no artifact available, exiting with error"
+	exit 1
+do
 
 ################################################################
 
