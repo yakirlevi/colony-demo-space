@@ -19,7 +19,7 @@ apt-get install nginx -y
 apt install awscli -y
 
 # consts
-wait_sec=1200 # 20 minutes
+wait_sec=45 # 20 minutes
 wait_interval=15 # not recommended to set a lower interval in order to avoid aws api throttling
 
 echo "Trying to download artifacts file: s3://$ARTIFACT_BUCKET/$ARTIFACT_KEY"
@@ -54,7 +54,7 @@ if [ ! $file_downloaded ]
 then
 	echo "Timeout reached, no artifact available, exiting with error"
 	exit 1
-do
+fi
 
 ################################################################
 
