@@ -26,7 +26,6 @@ echo "Trying to download artifacts file: s3://$ARTIFACT_BUCKET/$ARTIFACT_KEY"
 
 # get the file name from the artifact key
 file_name="$(basename $ARTIFACT_KEY)"
-file_downloaded=false
 
 for (( c=0 ; c<$wait_sec ; c=c+$wait_interval ))
 do
