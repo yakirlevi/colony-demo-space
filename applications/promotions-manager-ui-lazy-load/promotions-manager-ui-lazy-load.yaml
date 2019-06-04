@@ -23,8 +23,7 @@ infrastructure:
         instance_type: $AWS_INSTANCE_TYPE
   permissions:
     aws:
-      iam_instance_profile:
-        aws 1: s3FullAccess
+      iam_instance_profile: s3FullAccess
 
 configuration:
   start:
