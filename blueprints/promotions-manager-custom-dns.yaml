@@ -49,3 +49,4 @@ services:
         - DNS_ZONE_NAME: $DOMAIN_NAME
         - SUBDOMAIN: $SUBDOMAIN
         - IS_PRIVATE_ZONE: true
+        - REGION: eu-west-1
