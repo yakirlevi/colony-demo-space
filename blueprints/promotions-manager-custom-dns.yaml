@@ -50,3 +50,6 @@ services:
         - SUBDOMAIN: $SUBDOMAIN
         - IS_PRIVATE_ZONE: true
         - REGION: eu-west-1
+
+debugging:
+  availability: on
