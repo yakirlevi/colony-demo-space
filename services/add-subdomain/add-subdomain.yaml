@@ -10,7 +10,7 @@ inputs:
   - ROLE_ARN: PowerUserAccess
 
 module:
-  source: github.com/QualiSystemsLab/colony-demo-space/terraform/aws-route53-add-subdomain
+  source: github.com/QualiSystemsLab/colony-demo-space/terraform/aws-route53-add-subdomain-with-wait
 
 terraform_version: 0.11.11
 
