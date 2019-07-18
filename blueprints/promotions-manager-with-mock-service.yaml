@@ -46,3 +46,5 @@ applications:
 services:
   - mock-service:
               
+debugging:
+  availability: on

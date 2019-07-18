@@ -32,3 +32,6 @@ applications:
       target: vm1
       input_values:
         - AZURE_VM_SIZE: $AZURE_VM_SIZE
+        
+debugging:
+  availability: on

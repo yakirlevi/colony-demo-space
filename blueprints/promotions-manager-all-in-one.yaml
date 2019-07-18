@@ -42,4 +42,6 @@ applications:
         
   - mongodb:
       target: vm1
-              
+            
+debugging:
+  availability: on

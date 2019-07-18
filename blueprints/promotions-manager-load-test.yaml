@@ -38,3 +38,6 @@ applications:
         - API_BUILD_NUMBER: $API_BUILD_NUMBER
         
   - mongodb:
+
+debugging:
+  availability: on

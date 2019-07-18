@@ -17,8 +17,8 @@ data "aws_lb" "sandbox_alb" {
 
 resource "null_resource" "wait_until_subdomain_doesnt_exist" {
     provisioner "local-exec" {
-        command = "wait_until_subdomain_doesnt_exist.sh ${var.DNS_ZONE_NAME} ${var.SUBDOMAIN} ${data.aws_route53_zone.primary_zone.zone_id}"
-        interpreter = ["/bin/bash"]
+        command = "chmod 777 wait_until_subdomain_doesnt_exist.sh && ./wait_until_subdomain_doesnt_exist.sh '${var.DNS_ZONE_NAME}' '${var.SUBDOMAIN}' '${data.aws_route53_zone.primary_zone.zone_id}'"
+        interpreter = ["/bin/bash", "-c"]
   }
 }
 
