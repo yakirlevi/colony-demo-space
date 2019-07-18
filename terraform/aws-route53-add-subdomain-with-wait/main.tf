@@ -17,33 +17,8 @@ data "aws_lb" "sandbox_alb" {
 
 resource "null_resource" "wait_until_subdomain_doesnt_exist" {
     provisioner "local-exec" {
-        command = <<EOF
-#!/usr/bin/env bash
-apt-get install jq -y
-
-timeout=600
-wait_interval=5
-domain="${var.DNS_ZONE_NAME}"
-subdomain="${var.SUBDOMAIN}"
-
-for (( c=0 ; c<$timeout ; c=c+$wait_interval ))	
-do
-    status=$(aws route53 list-resource-record-sets --hosted-zone-id "${data.aws_route53_zone.primary_zone.zone_id}" --query "ResourceRecordSets[?Name == '$subdomain.$domain']|[?Type == 'A']" | jq 'any')
-    if [[ "$status" == "true" ]]
-    then
-        # domain exists, waiting
-        let remaining=$wait_sec-$c
-        echo "Domain $subdomain.$domain exists, sleeping for $wait_interval. Remaining timeout is $remaining seconds."
-        unset status  # reset the $status var
-        
-        sleep $wait_interval
-    else
-        # url not exists, exit loop
-        echo "Domain doesnt exist, exiting wait loop"
-        break
-    fi
-done
-        EOF
+        command = "wait_until_subdomain_doesnt_exist.sh ${var.DNS_ZONE_NAME} ${var.SUBDOMAIN} ${data.aws_route53_zone.primary_zone.zone_id}"
+        interpreter = ["/bin/bash"]
   }
 }
 
