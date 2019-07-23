@@ -2,10 +2,10 @@ spec_version: 1
 kind: blueprint
 metadata:
   description: >
-    Deployment of our promotions manager app in Kuberentes
+    Deployment of our promotions manager app in Google Kubernetes Engine
     
 clouds: 
-  - GCP/GKE-Cluster:
+  - GCP/GKE-Cluster
   
 artifacts:
   - promotions-manager-ui: artifacts/latest/promotions-manager-ui.master.tar.gz
