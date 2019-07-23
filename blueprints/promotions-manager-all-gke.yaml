@@ -8,9 +8,9 @@ clouds:
   - GCP/GKE-Cluster
   
 artifacts:
-  - promotions-manager-ui: artifacts/latest/promotions-manager-ui.master.tar.gz
-  - promotions-manager-api: artifacts/latest/promotions-manager-api.master.tar.gz
-  - mongodb: artifacts/test-data/test-data-db.tar
+  - promotions-manager-ui: promotions-manager/LATEST/promotions-manager-ui.latest.tar.gz
+  - promotions-manager-api: promotions-manager/LATEST/promotions-manager-api.latest.tar.gz
+  - mongodb: promotions-manager/LATEST/test-db.latest.tar.gz
 
 inputs:
 - PORT: 3000
