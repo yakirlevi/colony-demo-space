@@ -5,9 +5,8 @@ metadata:
   description: >
     A dev environment for both local and offshore teams
 
-
 clouds:
-  - AWS 1: eu-west-1
+  - AWS 2: eu-west-1
 
 # These are the blueprint parameters and their default values.
 # The values can be changed when creating a sandbox based on this

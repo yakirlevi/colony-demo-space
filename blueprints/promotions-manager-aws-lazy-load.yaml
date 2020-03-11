@@ -5,7 +5,7 @@ metadata:
     Deployment of our promotions manager were the UI app is lazy loading its artifacts from S3
     
 clouds: 
-  - AWS 1: eu-west-1
+  - AWS 2: us-west-2
   
 artifacts:
   - promotions-manager-api: artifacts/latest/promotions-manager-api.master.tar.gz
