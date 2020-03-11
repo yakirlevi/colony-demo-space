@@ -5,7 +5,7 @@ metadata:
     Deployment of our promotions manager app without UI. Only API and DB on the node.
     
 clouds: 
-  - azure 2/aks-cluster
+  - azure 4/aks-cluster
   
 artifacts:
   - promotions-manager-api-external: artifacts/latest/promotions-manager-api.master.tar.gz

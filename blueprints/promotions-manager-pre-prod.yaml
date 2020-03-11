@@ -5,7 +5,7 @@ metadata:
     Promotions manager application. Each component is deployed to a different node.
     
 clouds: 
-  - azure: westeurope
+  - azure 4: westeurope
   
 artifacts:
   - promotions-manager-ui:
