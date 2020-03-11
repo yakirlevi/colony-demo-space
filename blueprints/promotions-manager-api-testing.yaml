@@ -5,7 +5,7 @@ metadata:
     Deployment of our promotions manager app without UI. Only API and DB on the node.
     
 clouds: 
-  - azure 4: eastus
+  - azure 4: westeurope
   
 artifacts:
   - promotions-manager-api-external:
