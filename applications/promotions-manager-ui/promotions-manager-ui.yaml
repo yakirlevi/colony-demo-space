@@ -4,6 +4,8 @@ inputs:
 - API_PORT: 30001
 - AZURE_VM_SIZE: Basic_A1
 - AWS_INSTANCE_TYPE: m5.large
+- API_DNS: ''
+
 infrastructure:
   connectivity:
     external:
