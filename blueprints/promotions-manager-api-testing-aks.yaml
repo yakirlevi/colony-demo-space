@@ -20,7 +20,7 @@ applications:
   - promotions-manager-api-external:
       input_values:        
         - API_PORT: $API_PORT
-        - DATABASE_HOST: mongodb
+        - DATABASE_HOST: $colony.applications.mongodb.dns
         - RELEASE_NUMBER: $RELEASE_NUMBER
         - API_BUILD_NUMBER: $API_BUILD_NUMBER
 
