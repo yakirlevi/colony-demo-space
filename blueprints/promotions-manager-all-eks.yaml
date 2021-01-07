@@ -5,7 +5,7 @@ metadata:
     Deployment of our promotions manager app in Kuberentes
     
 clouds: 
-  - AWS 2/eks-colony-demo
+  - AWS 2/eks-colony-demo-uswest2
   
 artifacts:
   - promotions-manager-ui: artifacts/latest/promotions-manager-ui.master.tar.gz
@@ -23,6 +23,7 @@ applications:
       input_values:
         - PORT: $PORT
         - API_PORT: $API_PORT
+        - API_DNS: $colony.applications.promotions-manager-api.dns
 
   - promotions-manager-api:
       input_values:        
