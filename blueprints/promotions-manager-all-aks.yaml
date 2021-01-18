@@ -5,7 +5,7 @@ metadata:
     Deployment of our promotions manager app in Kuberentes
     
 clouds: 
-  - azure 4/aks-cluster-new
+  - azure 4/aks-cluster
   
 artifacts:
   - promotions-manager-ui: artifacts/latest/promotions-manager-ui.master.tar.gz
@@ -19,7 +19,7 @@ inputs:
 - API_BUILD_NUMBER: none
 
 applications:
-  - promotions-manager-ui:
+  - promotions-manager-ui-2:
       instances: 2
       input_values:
         - PORT: $PORT
