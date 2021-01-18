@@ -5,7 +5,7 @@ metadata:
     Deployment of our promotions manager app in Kuberentes
     
 clouds: 
-  - azure 4/aks-cluster
+  - azure 4/aks-cluster-new
   
 artifacts:
   - promotions-manager-ui: artifacts/latest/promotions-manager-ui.master.tar.gz
