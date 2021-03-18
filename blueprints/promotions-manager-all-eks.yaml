@@ -14,9 +14,9 @@ artifacts:
 
 inputs:
 - PORT: 3000
-- API_PORT: 3001
+- API_PORT: 3002
 - RELEASE_NUMBER: none
-- API_BUILD_NUMBER: none
+- API_BUILD_NUMBER: 
 
 applications:     
   - promotions-manager-ui:
