@@ -4,6 +4,7 @@ metadata:
   description: >
     Deployment of our promotions manager app in Kuberentes
     
+    
 clouds: 
   - AWS 2/eks-colony-demo-uswest2
   
