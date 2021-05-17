@@ -4,14 +4,24 @@ data "archive_file" "lambda_function_start-stop-ec2" {
   output_path = "${path.module}/hello_world.zip"
 }
 
+data "aws_lambda_invocation" "start_hello_world" {
+  function_name = aws_lambda_function.hello_world.function_name
+
+  input = <<JSON
+  {
+    "Example": "data"
+  }
+  JSON
+}
+
 resource "aws_lambda_function" "hello_world" {
   function_name = "hello_world_${var.sandbox_id}"
-  description   = "Simple example"
-  role          = aws_iam_role.lambda-role.arn
+  description   = "Hello world example"
+  role          = var.lambda_role_arn
   handler       = "hello_world.handler"
   runtime       = "nodejs12.x"
   timeout       = "120"
-  depends_on    = [aws_iam_role_policy_attachment.lambda-logs,aws_cloudwatch_log_group.hello_world_log_group]
+  depends_on    = [aws_cloudwatch_log_group.hello_world_log_group]
   filename      = "${path.module}/hello_world.zip"
 }
 

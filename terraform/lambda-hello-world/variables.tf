@@ -7,3 +7,8 @@ variable "sandbox_id" {
   type    = string
   default = "none"
 }
+
+variable "lambda_role_arn" {
+  type    = string
+  default = "none"
+}

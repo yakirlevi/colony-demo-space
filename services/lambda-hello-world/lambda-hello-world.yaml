@@ -2,8 +2,9 @@ spec_version: 1
 kind: TerraForm
 inputs:
   - REGION:
-  - sandbox_id:
   - ROLE_ARN: PowerUserAccess
+  - sandbox_id:
+  - lambda_role_arn: 
   
 
 module:
@@ -16,6 +17,11 @@ variables:
   values:       
     - aws_region: $REGION
     - sandbox_id: $sandbox_id
+    - lambda_role_arn: $lambda_role_arn
+
+outputs:
+  - lambda_output
+
 
 
 permissions:  

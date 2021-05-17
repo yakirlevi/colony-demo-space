@@ -1,0 +1,30 @@
+spec_version: 1
+kind: blueprint
+metadata:
+  description: Testing tf
+    
+clouds: 
+  - AWSOther: us-east-1
+
+inputs:
+  - REGION: us-east-1
+  - lambda_role_arn: 
+      description: Role arn used by Lambda. Must include ability to create and write to CloudWatch Log groups.
+
+applications:
+  - lambda-app:
+        input_values:
+          - lambda_output: $colony.services.lambda-hello-world.outputs.lambda_output
+        depends_on:
+          - lambda-hello-world
+
+services:
+  - lambda-hello-world:
+        input_values:
+          - sandbox_id: $colony.environment.id
+          - REGION: $REGION
+          - lambda_role_arn: $lambda_role_arn
+
+
+debugging:
+  availability: on
