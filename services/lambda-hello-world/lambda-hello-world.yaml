@@ -3,12 +3,13 @@ kind: TerraForm
 inputs:
   - REGION:
   - ROLE_ARN: PowerUserAccess
+  - branch:
   - sandbox_id:
   - lambda_role_arn: 
   
 
 module:
-  source: github.com/QualiSystemsLab/colony-demo-space/terraform/lambda-hello-world
+  source: github.com/QualiSystemsLab/colony-demo-space/terraform/lambda-hello-world?ref=${branch}
   
 
 terraform_version: 0.14.5

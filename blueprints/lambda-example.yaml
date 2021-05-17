@@ -1,7 +1,7 @@
 spec_version: 1
 kind: blueprint
 metadata:
-  description: Testing tf
+  description: Lambda Hello World example
     
 clouds: 
   - AWSOther: us-east-1
@@ -21,6 +21,7 @@ applications:
 services:
   - lambda-hello-world:
         input_values:
+          - branch: $colony.repos.current.branch
           - sandbox_id: $colony.environment.id
           - REGION: $REGION
           - lambda_role_arn: $lambda_role_arn
