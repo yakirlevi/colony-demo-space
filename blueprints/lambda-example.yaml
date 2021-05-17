@@ -4,13 +4,12 @@ metadata:
   description: Lambda Hello World example
     
 clouds: 
-  - AWS: us-east-1
+  - AWS 2: us-west-2
 
 inputs:
-  - REGION: us-east-1
-  - lambda_role_arn: 
-      description: Role arn used by Lambda. Must include ability to create and write to CloudWatch Log groups.
-
+  - REGION: us-west-2
+  - lambda_role_arn: arn:aws:iam::102305463663:role/service-role/test-role-h6sgfkms
+  
 applications:
   - lambda-app:
         input_values:
