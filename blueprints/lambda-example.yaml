@@ -4,7 +4,7 @@ metadata:
   description: Lambda Hello World example
     
 clouds: 
-  - AWSOther: us-east-1
+  - AWS: us-east-1
 
 inputs:
   - REGION: us-east-1

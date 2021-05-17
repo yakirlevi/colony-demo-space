@@ -9,7 +9,8 @@ inputs:
   
 
 module:
-  source: github.com/QualiSystemsLab/colony-demo-space/terraform/lambda-hello-world?ref=${branch}
+  # source: github.com/QualiSystemsLab/colony-demo-space/terraform/lambda-hello-world?ref=${branch}
+  source: git::https://github.com/QualiSystemsLab/colony-demo-space.git//terraform/lambda-hello-world?ref=${branch}
   
 
 terraform_version: 0.14.5
