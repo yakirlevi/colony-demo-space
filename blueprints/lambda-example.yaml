@@ -8,8 +8,8 @@ clouds:
 
 inputs:
   - REGION: us-west-2
-  - lambda_role_arn: arn:aws:iam::102305463663:role/service-role/test-role-h6sgfkms
-  
+  - lambda_role_arn: arn:aws:iam::102305463663:role/colony/0fedd9bd-57d4-4537-aab2-e5a949e4d586/colony-power-user-role-0fedd9bd-57d4-4537-aab2-e5a949e4d586
+
 applications:
   - lambda-app:
         input_values:
