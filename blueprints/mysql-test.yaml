@@ -1,0 +1,16 @@
+spec_version: 1
+kind: blueprint
+metadata:
+  description: Lambda Hello World example
+    
+clouds: 
+  - AWS 2: eu-west-1
+
+applications:
+  - mysql:
+        input_values:
+            - DB_USER: test
+            - DB_PASS: 123pass%
+            - DB_NAME: database
+debugging:
+  availability: on

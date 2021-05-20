@@ -8,7 +8,7 @@ clouds:
 
 inputs:
   - REGION: us-west-2
-  - lambda_role_arn: arn:aws:iam::102305463663:role/service-role/test-role-h6sgfkms
+  - lambda_role_arn: arn:aws:iam::102305463663:role/service-role/test-role
 
 applications:
   - lambda-app:
